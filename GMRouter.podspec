@@ -17,22 +17,20 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
+    Not boring about query in url
                        DESC
 
   s.homepage         = "https://github.com/geminiwen/GMRouter"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
   s.license          = 'MIT'
-  s.author           = { "Shengzhang Wen" => "coffeesherk@gmail.com" }
+  s.author           = { "Gemini Wen" => "coffeesherk@gmail.com" }
   s.source           = { :git => "https://github.com/geminiwen/GMRouter.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'http://weibo.com/coffeesherk'
 
   s.platform     = :ios, '7.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'GMRouter' => ['Pod/Assets/*.png']
-  }
+  s.source_files = 'GMRouter/*'
+  
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
