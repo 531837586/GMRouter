@@ -1,6 +1,4 @@
 # GMRouter
-![cocoapods](https://cocoapods.org/?q=GMRouter)
-
 A URL Router who parse url use regex express for iOS. Inspired by [HHRouter](https://github.com/Huohua/HHRouter)
 
 # Usage
