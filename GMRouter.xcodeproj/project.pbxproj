@@ -31,9 +31,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD817B17CD4868B2AA7CF8BC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA34A1A83C4E9EBDD8FD0C63 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		BFBC401A85530DB14D4D237E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DA7D82A61C92B0B200232A99 /* GMRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D82C21C92B0B300232A99 /* GMRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D82C61C92B0B300232A99 /* GMRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMRouterTests.m; sourceTree = "<group>"; };
@@ -73,23 +70,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5053A4796FFBDE69E68FD535 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BA34A1A83C4E9EBDD8FD0C63 /* Pods.debug.xcconfig */,
-				BFBC401A85530DB14D4D237E /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		A1B9DD8D9D34326C60CFE6FA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				AD817B17CD4868B2AA7CF8BC /* libPods.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		DA7D829D1C92B0B200232A99 = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +78,6 @@
 				DA7D82C51C92B0B300232A99 /* GMRouterTests */,
 				DA7D82A71C92B0B200232A99 /* Products */,
 				DA7D82E31C92B0FD00232A99 /* GMRouterExample */,
-				5053A4796FFBDE69E68FD535 /* Pods */,
-				A1B9DD8D9D34326C60CFE6FA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -381,7 +359,6 @@
 		};
 		DA7D82D71C92B0B300232A99 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA34A1A83C4E9EBDD8FD0C63 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/GMRouterExample/Info.plist";
@@ -393,7 +370,6 @@
 		};
 		DA7D82D81C92B0B300232A99 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BFBC401A85530DB14D4D237E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "$(SRCROOT)/GMRouterExample/Info.plist";
