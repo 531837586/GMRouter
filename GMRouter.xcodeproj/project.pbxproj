@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA7990B81C92FC3E00B2FCDD /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = DA7990B71C92FC3E00B2FCDD /* README.md */; };
 		DA7D82C71C92B0B300232A99 /* GMRouterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82C61C92B0B300232A99 /* GMRouterTests.m */; };
 		DA7D82F11C92B0FD00232A99 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82E51C92B0FD00232A99 /* AppDelegate.m */; };
 		DA7D82F21C92B0FD00232A99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA7D82E61C92B0FD00232A99 /* Assets.xcassets */; };
@@ -17,7 +18,6 @@
 		DA7D82F81C92B0FD00232A99 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82F01C92B0FD00232A99 /* ViewController.m */; };
 		DA7D82FD1C92B1A000232A99 /* GMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82FC1C92B1A000232A99 /* GMRouter.m */; };
 		DA7D83001C92BCB800232A99 /* GMRouterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82FF1C92BCB800232A99 /* GMRouterRequest.m */; };
-		DAFAB03E1C92E30C004A6C3F /* README in Resources */ = {isa = PBXBuildFile; fileRef = DAFAB03D1C92E30C004A6C3F /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DA7990B71C92FC3E00B2FCDD /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DA7D82A61C92B0B200232A99 /* GMRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GMRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D82C21C92B0B300232A99 /* GMRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D82C61C92B0B300232A99 /* GMRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMRouterTests.m; sourceTree = "<group>"; };
@@ -49,7 +50,6 @@
 		DA7D82FC1C92B1A000232A99 /* GMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMRouter.m; path = GMRouter/GMRouter.m; sourceTree = "<group>"; };
 		DA7D82FE1C92BCB800232A99 /* GMRouterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMRouterRequest.h; path = GMRouter/GMRouterRequest.h; sourceTree = "<group>"; };
 		DA7D82FF1C92BCB800232A99 /* GMRouterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMRouterRequest.m; path = GMRouter/GMRouterRequest.m; sourceTree = "<group>"; };
-		DAFAB03D1C92E30C004A6C3F /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +73,7 @@
 		DA7D829D1C92B0B200232A99 = {
 			isa = PBXGroup;
 			children = (
-				DAFAB03D1C92E30C004A6C3F /* README */,
+				DA7990B71C92FC3E00B2FCDD /* README.md */,
 				DA7D82F91C92B14700232A99 /* GMRouter */,
 				DA7D82C51C92B0B300232A99 /* GMRouterTests */,
 				DA7D82A71C92B0B200232A99 /* Products */,
@@ -207,7 +207,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAFAB03E1C92E30C004A6C3F /* README in Resources */,
 				DA7D82F41C92B0FD00232A99 /* Main.storyboard in Resources */,
 				DA7D82F21C92B0FD00232A99 /* Assets.xcassets in Resources */,
 				DA7D82F31C92B0FD00232A99 /* LaunchScreen.storyboard in Resources */,
@@ -231,6 +230,7 @@
 				DA7D82FD1C92B1A000232A99 /* GMRouter.m in Sources */,
 				DA7D82F51C92B0FD00232A99 /* GMRouter.xcdatamodeld in Sources */,
 				DA7D82F71C92B0FD00232A99 /* main.m in Sources */,
+				DA7990B81C92FC3E00B2FCDD /* README.md in Sources */,
 				DA7D83001C92BCB800232A99 /* GMRouterRequest.m in Sources */,
 				DA7D82F81C92B0FD00232A99 /* ViewController.m in Sources */,
 				DA7D82F11C92B0FD00232A99 /* AppDelegate.m in Sources */,
