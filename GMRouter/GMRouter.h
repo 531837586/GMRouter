@@ -13,7 +13,17 @@ typedef id (^GMRouterBlock) (NSDictionary *params);
 @interface GMRouter : NSObject
 
 - (void) map:(NSString *) url toBlock:(GMRouterBlock) block;
+- (void) map:(NSString *) url toControllerClass:(Class)controllerClass;
+
 - (GMRouterBlock) matchBlock:(NSString *)url;
 
+- (UIViewController *) matchViewController:(NSString *)url;
+
 + (instancetype)shared;
+@end
+
+@interface UIViewController (GMRouter)
+
+@property (nonatomic, strong) NSDictionary *params;
+
 @end

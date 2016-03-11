@@ -39,12 +39,12 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     GMRouter *router = [GMRouter shared];
-    GMRouterBlock block = ^(NSDictionary *params) {
+    GMRouterBlock block = ^id(NSDictionary *params) {
         XCTAssertEqualObjects(params[@"uid"], @"123");
         XCTAssertEqualObjects(params[@"pid"], @"23423");
         XCTAssertEqualObjects(params[@"hello"], @"world");
         dispatch_semaphore_signal(semaphore);
-        return [NSNull null];
+        return nil;
     };
     
     
@@ -63,16 +63,16 @@
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     GMRouter *router = [GMRouter shared];
-    GMRouterBlock block1 = ^(NSDictionary *params) {
+    GMRouterBlock block1 = ^id(NSDictionary *params) {
         XCTAssertFalse(YES);
-        return [NSNull null];
+        return nil;
     };
     
-    GMRouterBlock block2 = ^(NSDictionary *params) {
+    GMRouterBlock block2 = ^id(NSDictionary *params) {
         XCTAssertEqualObjects(params[@"uid"], @"2");
         XCTAssertEqualObjects(params[@"hello"], @"world2");
         dispatch_semaphore_signal(semaphore);
-        return [NSNull null];
+        return nil;
     };
     
     [router map:@"/gemini/[uid]/pic" toBlock:block2];

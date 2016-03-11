@@ -8,10 +8,31 @@
 
 #import "GMRouter.h"
 #import "GMRouterRequest.h"
+#import <objc/runtime.h>
+
+#pragma mark - UIViewController Category
+
+@implementation UIViewController (GMRouter)
+
+static char kAssociatedParamsObjectKey;
+
+- (void)setParams:(NSDictionary *)paramsDictionary
+{
+    objc_setAssociatedObject(self, &kAssociatedParamsObjectKey, paramsDictionary, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSDictionary *)params
+{
+    return objc_getAssociatedObject(self, &kAssociatedParamsObjectKey);
+}
+@end
+
+#define kRegisterUrl @"__origin_url"
+
 
 @interface GMRouter()
 @property (strong, nonatomic) NSMutableDictionary<NSString *, GMRouterBlock> *blockStore;
-@property (strong, nonatomic) NSMutableDictionary<NSString *, UIViewController *> *viewControllerStore;
+@property (strong, nonatomic) NSMutableDictionary<NSString *, Class> *controllerClassStore;
 @end
 
 @implementation GMRouter
@@ -20,7 +41,7 @@
     self = [super init];
     if (self) {
         self.blockStore = [NSMutableDictionary dictionary];
-        self.viewControllerStore = [NSMutableDictionary dictionary];
+        self.controllerClassStore = [NSMutableDictionary dictionary];
     }
     return self;
 }
@@ -30,10 +51,47 @@
     self.blockStore[url] = block;
 }
 
-- (GMRouterBlock) matchBlock:(NSString *)pendingUrl {
-    NSArray *allKeys = self.blockStore.allKeys;
+- (void) map:(NSString *) url toControllerClass:(Class)controllerClass {
+    self.controllerClassStore[url] = controllerClass;
+}
 
+-(UIViewController *) matchViewController:(NSString *)pendingUrl {
+    NSDictionary *parameters = [self parseParameters:pendingUrl andKeys:self.controllerClassStore.allKeys];
+    
+    if (parameters){
+        Class class = self.controllerClassStore[parameters[kRegisterUrl]];
+        UIViewController *viewController = [[class alloc] init];
+        
+        if ([viewController respondsToSelector:@selector(setParams:)]) {
+            [viewController performSelector:@selector(setParams:)
+                                 withObject:[parameters copy]];
+        }
+        return viewController;
+    }
+    return nil;
+};
+
+- (GMRouterBlock) matchBlock:(NSString *)pendingUrl {
+    NSDictionary *parameters = [self parseParameters:pendingUrl andKeys:self.blockStore.allKeys];
+
+    if (parameters){
+        GMRouterBlock block = [self.blockStore[parameters[kRegisterUrl]] copy];
+        
+        return ^id(NSDictionary *params) {
+            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:params];
+            [dic addEntriesFromDictionary:parameters];
+            return block([dic copy]);
+        };
+    } else {
+        return ^id(NSDictionary *params) { return nil; };
+    }
+ 
+}
+
+-(NSMutableDictionary *) parseParameters:(NSString *) pendingUrl andKeys:(NSArray *)allKeys {
+    
     GMRouterRequest *request = [[GMRouterRequest alloc] initWithString:pendingUrl];
+    NSMutableDictionary *returnParams = nil;
     
     for (NSString *url in allKeys) {
         NSMutableString *mutableUrl = [url mutableCopy];
@@ -56,13 +114,13 @@
         [regex replaceMatchesInString:mutableUrl
                               options:0
                                 range:NSMakeRange(0, urlLength) withTemplate:@"%"];
-       
+        
         [NSRegularExpression escapedPatternForString:mutableUrl];
         [mutableUrl replaceOccurrencesOfString:@"%"
                                     withString:@"([^\\/]+)" options:NSCaseInsensitiveSearch
                                          range:NSMakeRange(0, [mutableUrl length])];
         
-
+        
         regex = [NSRegularExpression regularExpressionWithPattern:mutableUrl
                                                           options:NSRegularExpressionCaseInsensitive
                                                             error:nil];
@@ -82,8 +140,8 @@
             NSString *param = [pathInfo substringWithRange:range];
             [paramsValues addObject:param];
         }
-        
-        NSMutableDictionary *returnParams = [NSMutableDictionary dictionary];
+       
+        returnParams = [NSMutableDictionary dictionary];
         
         NSUInteger paramsLength = [paramsKeys count];
         for(NSUInteger i = 0; i < paramsLength; i ++) {
@@ -91,19 +149,12 @@
         }
         
         [returnParams addEntriesFromDictionary:request.query];
-        
-        GMRouterBlock block = [self.blockStore[url] copy];
-        
-        return ^(NSDictionary *params) {
-            NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:params];
-            [dic addEntriesFromDictionary:returnParams];
-            return block([dic copy]);
-        };
+        returnParams[kRegisterUrl] = url;
+        break;
     }
-    return ^(NSDictionary *params) {
-        return [NSNull null];
-    };
+    return returnParams;
 }
+
 
 
 + (instancetype)shared
@@ -120,3 +171,7 @@
 }
 
 @end
+
+
+
+
