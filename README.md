@@ -30,7 +30,7 @@ newBlock(nil);
 
 We will get the params in block.
 
-## So can Controller
+## How about Controller
 
 ```Objective-C
 GMRouter *router = [GMRouter shared];
