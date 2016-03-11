@@ -7,7 +7,7 @@ A URL Router who parse url use regex express for iOS. Inspired by [HHRouter](htt
 
 Map URL patterns to a block.
 
-```
+```Objective-C
 GMRouter *router = [GMRouter shared];
 GMRouterBlock block = ^(NSDictionary *params) {
     NSLog(@"%@", params[@"uid"]);
@@ -32,7 +32,7 @@ We will get the params in block.
 
 ## So can Controller
 
-```
+```Objective-C
 GMRouter *router = [GMRouter shared];
 [router map:@"/q/[questionId]" toControllerClass:[UIViewController class]];
 UIViewController *controller = [router matchViewController:@"/q/1000010000?__ea=111"];
