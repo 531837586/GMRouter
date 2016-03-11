@@ -57,7 +57,35 @@
          runMode:NSDefaultRunLoopMode
          beforeDate:[NSDate dateWithTimeIntervalSinceNow:TIME_OUT]];
     }
+}
+
+- (void) testConflictBlock {
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
+    GMRouter *router = [GMRouter shared];
+    GMRouterBlock block1 = ^(NSDictionary *params) {
+        XCTAssertFalse(YES);
+        return [NSNull null];
+    };
+    
+    GMRouterBlock block2 = ^(NSDictionary *params) {
+        XCTAssertEqualObjects(params[@"uid"], @"2");
+        XCTAssertEqualObjects(params[@"hello"], @"world2");
+        dispatch_semaphore_signal(semaphore);
+        return [NSNull null];
+    };
+    
+    [router map:@"/gemini/[uid]/pic" toBlock:block2];
+    [router map:@"/gemini/[uid]/[pid]" toBlock:block1];
+    GMRouterBlock newBlock = [router matchBlock:@"/gemini/2/pic?hello=world2"];
+    newBlock(nil);
+    
+    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW)) {
+        [[NSRunLoop currentRunLoop]
+         runMode:NSDefaultRunLoopMode
+         beforeDate:[NSDate dateWithTimeIntervalSinceNow:TIME_OUT]];
+    }
+ 
 }
 
 - (void)testPerformanceExample {

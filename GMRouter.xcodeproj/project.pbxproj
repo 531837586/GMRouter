@@ -17,17 +17,11 @@
 		DA7D82F81C92B0FD00232A99 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82F01C92B0FD00232A99 /* ViewController.m */; };
 		DA7D82FD1C92B1A000232A99 /* GMRouter.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82FC1C92B1A000232A99 /* GMRouter.m */; };
 		DA7D83001C92BCB800232A99 /* GMRouterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DA7D82FF1C92BCB800232A99 /* GMRouterRequest.m */; };
+		DAFAB03E1C92E30C004A6C3F /* README in Resources */ = {isa = PBXBuildFile; fileRef = DAFAB03D1C92E30C004A6C3F /* README */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DA7D82C31C92B0B300232A99 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DA7D829E1C92B0B200232A99 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DA7D82A51C92B0B200232A99;
-			remoteInfo = GMRouter;
-		};
-		DA7D82CE1C92B0B300232A99 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DA7D829E1C92B0B200232A99 /* Project object */;
 			proxyType = 1;
@@ -41,7 +35,6 @@
 		DA7D82C21C92B0B300232A99 /* GMRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D82C61C92B0B300232A99 /* GMRouterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GMRouterTests.m; sourceTree = "<group>"; };
 		DA7D82C81C92B0B300232A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA7D82CD1C92B0B300232A99 /* GMRouterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GMRouterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA7D82E41C92B0FD00232A99 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA7D82E51C92B0FD00232A99 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA7D82E61C92B0FD00232A99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,6 +49,7 @@
 		DA7D82FC1C92B1A000232A99 /* GMRouter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMRouter.m; path = GMRouter/GMRouter.m; sourceTree = "<group>"; };
 		DA7D82FE1C92BCB800232A99 /* GMRouterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GMRouterRequest.h; path = GMRouter/GMRouterRequest.h; sourceTree = "<group>"; };
 		DA7D82FF1C92BCB800232A99 /* GMRouterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GMRouterRequest.m; path = GMRouter/GMRouterRequest.m; sourceTree = "<group>"; };
+		DAFAB03D1C92E30C004A6C3F /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,19 +67,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA7D82CA1C92B0B300232A99 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		DA7D829D1C92B0B200232A99 = {
 			isa = PBXGroup;
 			children = (
+				DAFAB03D1C92E30C004A6C3F /* README */,
 				DA7D82F91C92B14700232A99 /* GMRouter */,
 				DA7D82C51C92B0B300232A99 /* GMRouterTests */,
 				DA7D82A71C92B0B200232A99 /* Products */,
@@ -98,7 +86,6 @@
 			children = (
 				DA7D82A61C92B0B200232A99 /* GMRouter.app */,
 				DA7D82C21C92B0B300232A99 /* GMRouterTests.xctest */,
-				DA7D82CD1C92B0B300232A99 /* GMRouterUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,24 +165,6 @@
 			productReference = DA7D82C21C92B0B300232A99 /* GMRouterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DA7D82CC1C92B0B300232A99 /* GMRouterUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DA7D82DC1C92B0B300232A99 /* Build configuration list for PBXNativeTarget "GMRouterUITests" */;
-			buildPhases = (
-				DA7D82C91C92B0B300232A99 /* Sources */,
-				DA7D82CA1C92B0B300232A99 /* Frameworks */,
-				DA7D82CB1C92B0B300232A99 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DA7D82CF1C92B0B300232A99 /* PBXTargetDependency */,
-			);
-			name = GMRouterUITests;
-			productName = GMRouterUITests;
-			productReference = DA7D82CD1C92B0B300232A99 /* GMRouterUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -209,10 +178,6 @@
 						CreatedOnToolsVersion = 7.2.1;
 					};
 					DA7D82C11C92B0B300232A99 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = DA7D82A51C92B0B200232A99;
-					};
-					DA7D82CC1C92B0B300232A99 = {
 						CreatedOnToolsVersion = 7.2.1;
 						TestTargetID = DA7D82A51C92B0B200232A99;
 					};
@@ -233,7 +198,6 @@
 			targets = (
 				DA7D82A51C92B0B200232A99 /* GMRouter */,
 				DA7D82C11C92B0B300232A99 /* GMRouterTests */,
-				DA7D82CC1C92B0B300232A99 /* GMRouterUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -243,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFAB03E1C92E30C004A6C3F /* README in Resources */,
 				DA7D82F41C92B0FD00232A99 /* Main.storyboard in Resources */,
 				DA7D82F21C92B0FD00232A99 /* Assets.xcassets in Resources */,
 				DA7D82F31C92B0FD00232A99 /* LaunchScreen.storyboard in Resources */,
@@ -250,13 +215,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DA7D82C01C92B0B300232A99 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DA7D82CB1C92B0B300232A99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -287,13 +245,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DA7D82C91C92B0B300232A99 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,11 +252,6 @@
 			isa = PBXTargetDependency;
 			target = DA7D82A51C92B0B200232A99 /* GMRouter */;
 			targetProxy = DA7D82C31C92B0B300232A99 /* PBXContainerItemProxy */;
-		};
-		DA7D82CF1C92B0B300232A99 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DA7D82A51C92B0B200232A99 /* GMRouter */;
-			targetProxy = DA7D82CE1C92B0B300232A99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -457,30 +403,6 @@
 			};
 			name = Release;
 		};
-		DA7D82DD1C92B0B300232A99 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = GMRouterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.gemini.GMRouterUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = GMRouter;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		DA7D82DE1C92B0B300232A99 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = GMRouterUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = org.gemini.GMRouterUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = GMRouter;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -500,6 +422,7 @@
 				DA7D82D81C92B0B300232A99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DA7D82D91C92B0B300232A99 /* Build configuration list for PBXNativeTarget "GMRouterTests" */ = {
 			isa = XCConfigurationList;
@@ -508,14 +431,7 @@
 				DA7D82DB1C92B0B300232A99 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		DA7D82DC1C92B0B300232A99 /* Build configuration list for PBXNativeTarget "GMRouterUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DA7D82DD1C92B0B300232A99 /* Debug */,
-				DA7D82DE1C92B0B300232A99 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
