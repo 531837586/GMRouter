@@ -85,7 +85,13 @@
          runMode:NSDefaultRunLoopMode
          beforeDate:[NSDate dateWithTimeIntervalSinceNow:TIME_OUT]];
     }
- 
+}
+
+- (void) testControllerClass {
+    GMRouter *router = [GMRouter shared];
+    [router map:@"/q/[questionId]" toControllerClass:[UIViewController class]];
+    UIViewController *controller = [router matchViewController:@"/q/1000010000?__ea=111"];
+    XCTAssertEqualObjects(controller.params[@"questionId"], @"1000010000");
 }
 
 - (void)testPerformanceExample {
