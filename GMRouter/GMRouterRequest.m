@@ -13,6 +13,7 @@
 - (instancetype) initWithString:(NSString *)url {
     self = [super init];
     if (self) {
+        url = [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURLComponents *components = [[NSURLComponents alloc] initWithString:url];
         [self parse:components];
     }

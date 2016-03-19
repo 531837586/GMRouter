@@ -19,11 +19,13 @@ typedef id (^GMRouterBlock) (NSDictionary *params);
 
 - (UIViewController *) matchViewController:(NSString *)url;
 
+
 + (instancetype)shared;
 @end
 
 @interface UIViewController (GMRouter)
 
 @property (nonatomic, strong) NSDictionary *params;
+
 
 @end

@@ -59,25 +59,20 @@
     }
 }
 
-- (void) testConflictBlock {
+
+- (void) testChineseLanguage {
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
     
     GMRouter *router = [GMRouter shared];
-    GMRouterBlock block1 = ^id(NSDictionary *params) {
-        XCTAssertFalse(YES);
-        return nil;
-    };
-    
-    GMRouterBlock block2 = ^id(NSDictionary *params) {
-        XCTAssertEqualObjects(params[@"uid"], @"2");
-        XCTAssertEqualObjects(params[@"hello"], @"world2");
+    GMRouterBlock block = ^id(NSDictionary *params) {
+        XCTAssertEqualObjects(params[@"uid"], @"前端");
         dispatch_semaphore_signal(semaphore);
         return nil;
     };
     
-    [router map:@"/gemini/[uid]/pic" toBlock:block2];
-    [router map:@"/gemini/[uid]/[pid]" toBlock:block1];
-    GMRouterBlock newBlock = [router matchBlock:@"/gemini/2/pic?hello=world2"];
+    
+    [router map:@"/chinese/[uid]" toBlock:block];
+    GMRouterBlock newBlock = [router matchBlock:@"/chinese/前端"];
     newBlock(nil);
     
     while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW)) {
@@ -85,6 +80,7 @@
          runMode:NSDefaultRunLoopMode
          beforeDate:[NSDate dateWithTimeIntervalSinceNow:TIME_OUT]];
     }
+ 
 }
 
 - (void) testControllerClass {

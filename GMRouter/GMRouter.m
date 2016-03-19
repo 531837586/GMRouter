@@ -33,6 +33,7 @@ static char kAssociatedParamsObjectKey;
 @interface GMRouter()
 @property (strong, nonatomic) NSMutableDictionary<NSString *, GMRouterBlock> *blockStore;
 @property (strong, nonatomic) NSMutableDictionary<NSString *, Class> *controllerClassStore;
+@property (nonatomic, weak) UINavigationController *navigationController;
 @end
 
 @implementation GMRouter
@@ -154,6 +155,7 @@ static char kAssociatedParamsObjectKey;
     }
     return returnParams;
 }
+
 
 
 
